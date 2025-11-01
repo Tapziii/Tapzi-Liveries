@@ -2680,3 +2680,29 @@ top: 10px;
   cursor: pointer;
   border-radius: 5px;
 }
+
+.request-status {
+  background-color: #7f1d1d33;
+  color: #ffffff;
+  padding: 16px 20px;
+  border-radius: 12px;
+  max-width: 500px;
+  margin: auto;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.request-status h2 {
+  font-size: 1.7rem;
+  margin-bottom: 6px;
+}
+
+.request-status span {
+  color: #ff5555;
+}
+
+.request-status p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
