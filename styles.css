@@ -2682,8 +2682,6 @@ top: 10px;
 }
 
 .request-status {
-  background-color: #7f1d1d33;
-  color: #ffffff;
   padding: 16px 20px;
   border-radius: 12px;
   max-width: 500px;
@@ -2691,6 +2689,26 @@ top: 10px;
   text-align: center;
   font-family: 'Poppins', sans-serif;
   box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  backdrop-filter: blur(4px);
+  color: #ffffff;
+}
+
+/* --- CLOSED (existing) --- */
+.request-status:not(.open) {
+  background-color: #7f1d1d33;
+}
+
+.request-status:not(.open) span {
+  color: #ff5555;
+}
+
+/* --- OPEN --- */
+.request-status.open {
+  background-color: #16653433;
+}
+
+.request-status.open span {
+  color: #4ade80;
 }
 
 .request-status h2 {
@@ -2698,11 +2716,8 @@ top: 10px;
   margin-bottom: 6px;
 }
 
-.request-status span {
-  color: #ff5555;
-}
-
 .request-status p {
   font-size: 1.1rem;
   opacity: 0.9;
 }
+
