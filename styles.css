@@ -2721,3 +2721,8 @@ top: 10px;
   font-size: 1.1rem;
   opacity: 0.9;
 }
+
+
+nav a.active {
+  text-decoration: underline;
+}
