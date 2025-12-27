@@ -273,10 +273,9 @@ window.addEventListener('click', (e) => {
 
 
 
-  const path = window.location.pathname.replace(/\/$/, ""); // remove trailing slash
+  const path = window.location.pathname.replace(/\/$/, "");
 
   document.querySelectorAll("nav a").forEach(link => {
-    // Convert relative href to absolute path
     const href = new URL(link.getAttribute("href"), location.origin)
       .pathname.replace(/\/$/, "");
 
