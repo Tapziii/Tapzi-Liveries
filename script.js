@@ -273,4 +273,11 @@ window.addEventListener('click', (e) => {
 
 
 
+  const path = window.location.pathname.replace(/\/$/, "");
 
+  document.querySelectorAll("nav a").forEach(link => {
+    const page = "/" + link.dataset.page;
+    if (path === page || (page === "/home" && path === "")) {
+      link.classList.add("active");
+    }
+  });
