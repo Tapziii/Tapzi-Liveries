@@ -1407,7 +1407,7 @@ transform: scale(1.1);  transition: all 0.2s ease;
 }
 
 .featured-category {
-  font-size: 0.95rem;
+  font-size: 1.075rem;
   font-weight: 700;
   color: #fca5a5;
   text-transform: uppercase;
