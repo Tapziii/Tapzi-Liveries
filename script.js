@@ -273,13 +273,15 @@ window.addEventListener('click', (e) => {
 
 
 
-  const path = window.location.pathname.replace(/\/$/, "");
+  // Get the current URL path
+  const currentPath = window.location.pathname.replace(/\/$/, "");
 
   document.querySelectorAll("nav a").forEach(link => {
-    const href = new URL(link.getAttribute("href"), location.origin)
+    // Resolve relative href to absolute path
+    const resolvedHref = new URL(link.getAttribute("href"), window.location.origin + window.location.pathname)
       .pathname.replace(/\/$/, "");
 
-    if (href === path) {
+    if (resolvedHref === currentPath) {
       link.classList.add("active");
     }
   });
