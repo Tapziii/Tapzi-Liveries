@@ -272,12 +272,13 @@ window.addEventListener('click', (e) => {
 });
 
 
-
-  const path = window.location.pathname.replace(/\/$/, "");
+  const current = location.pathname.replace(/\/$/, "");
 
   document.querySelectorAll("nav a").forEach(link => {
-    const page = "/" + link.dataset.page;
-    if (path === page || (page === "/home" && path === "")) {
+    const href = new URL(link.getAttribute("href"), location.origin)
+      .pathname.replace(/\/$/, "");
+
+    if (href === current) {
       link.classList.add("active");
     }
   });
