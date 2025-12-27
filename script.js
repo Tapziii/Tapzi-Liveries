@@ -272,13 +272,15 @@ window.addEventListener('click', (e) => {
 });
 
 
-  const current = location.pathname.replace(/\/$/, "");
+
+  const path = window.location.pathname.replace(/\/$/, ""); // remove trailing slash
 
   document.querySelectorAll("nav a").forEach(link => {
+    // Convert relative href to absolute path
     const href = new URL(link.getAttribute("href"), location.origin)
       .pathname.replace(/\/$/, "");
 
-    if (href === current) {
+    if (href === path) {
       link.classList.add("active");
     }
   });
