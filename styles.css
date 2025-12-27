@@ -1407,7 +1407,7 @@ transform: scale(1.1);  transition: all 0.2s ease;
 }
 
 .featured-category {
-  font-size: 1.05rem;
+  font-size: 1.1rem;
   font-weight: 700;
   color: #fca5a5;
   text-transform: uppercase;
@@ -2593,7 +2593,7 @@ top: 10px;
   justify-content: center;
   align-items: center;
   z-index: 10000;
-  flex-direction: column; /* כדי ליישר את התמונה במרכז */
+  flex-direction: column; 
 }
 
 #lightbox-img {
@@ -2615,17 +2615,17 @@ top: 10px;
 }
 
 .sim-label {
-  display: inline-flex;           /* centers text nicely */
+  display: inline-flex;          
   align-items: center;
   justify-content: center;
   width: fit-content;
   background-color: #a91717;
   color: white;
-  font-size: 17px;                /* slightly larger text */
+  font-size: 17px;                
   font-weight: 600;
-  padding: 2px 6px;               /* adjusted to fit text nicely */
+  padding: 6px;              
   border-radius: 5px;
-  margin-top: 5px;
+  margin-top: 15px;
   letter-spacing: 0.4px;
   text-transform: uppercase;
   line-height: 1.2;
@@ -2633,8 +2633,8 @@ top: 10px;
 }
 
 .template-note {
-  display: inline-block;           /* fits the text width */
-  background-color: rgba(169, 23, 23, 0.9); /* semi-solid red to match your theme */
+  display: inline-block;           
+  background-color: rgba(169, 23, 23, 0.9); 
   color: white;
   font-size: 17px;
   font-weight: 500;
