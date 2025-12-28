@@ -42,7 +42,13 @@
                 </div>
             </div>
         </nav>
-
+<div id="mobileModal">
+  <div class="modalContent">
+    <h2>📱 Heads Up!</h2>
+    <p>This site isn’t fully optimized for your screen size yet. For the best experience, please visit from a PC or laptop.</p>
+    <button id="closeModal">Got it!</button>
+  </div>
+</div>
         <!-- Portfolio Header -->
         <section class="portfolio-header-section">
             <div class="portfolio-header-container">
@@ -583,5 +589,24 @@
        <button onclick="topFunction()" id="myBtn" title="Go to top">TOP</button>
 
     <script src="script.js"></script>
+    <script>
+
+ window.addEventListener('load', function() { 
+  const modal = document.getElementById('mobileModal');
+  const closeBtn = document.getElementById('closeModal');
+
+  if (!modal || !closeBtn) return; 
+
+
+  if (window.innerWidth <= 1024) {
+    modal.style.display = 'flex';
+  }
+
+  closeBtn.addEventListener('click', function() {
+    modal.style.display = 'none';
+  });
+});
+
+</script>
 </body>
 </html>
