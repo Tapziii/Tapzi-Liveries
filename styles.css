@@ -2256,7 +2256,7 @@ transform: scale(1.1);  transition: all 0.2s ease;
 
 .go-to-portfolio {
   position: relative;
-  margin: 4rem auto 0 auto;  /* Changed from margin: 0 1rem */
+  margin: 4rem auto 0 auto; 
   z-index: 9;
   border: 3px solid #f44336;
   background-color: #f44336;
@@ -2272,8 +2272,8 @@ transform: scale(1.1);  transition: all 0.2s ease;
   border-radius: 0.6rem;
   outline: none;
   transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
-  width: fit-content;      /* Changed from auto */
-  display: block;         /* Changed from inline-block */
+  width: fit-content;     
+  display: block;       
   text-decoration: none !important;
   -webkit-text-decoration: none !important;
   -moz-text-decoration: none !important;
