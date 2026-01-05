@@ -2258,7 +2258,6 @@ transform: scale(1.1);  transition: all 0.2s ease;
   position: relative;
   margin: 4rem auto 0 auto;  /* Changed from margin: 0 1rem */
   z-index: 9;
-  border: 3px solid #f44336;
   background-color: #f44336;
   color: #fff !important;
   cursor: pointer;
