@@ -21,6 +21,24 @@
     </style>
 </head>
 <body>
+    <div id="loadingScreen" class="loading-screen">
+  <div class="scan-line"></div>
+  
+  <div class="bg-shape shape-1"></div>
+  <div class="bg-shape shape-2"></div>
+  <div class="bg-shape shape-3"></div>
+
+  <div class="loading-container">
+    <div class="rotation-wrapper">
+      <div class="square-loader"></div>
+    </div>
+
+    <div class="loading-title">
+      <span class="loading-title-top">Tapzi</span>
+      <span class="loading-title-bottom">Liveries</span>
+    </div>
+  </div>
+</div>
     <div id="root">
         <!-- Geometric Background -->
         <div class="geometric-background">
@@ -288,6 +306,19 @@
   });
 });
 
+</script>
+      <script>
+window.addEventListener("load", () => {
+    const loader = document.getElementById("loadingScreen");
+    
+    // Smoothly fade out
+    loader.classList.add("loading-fade-out");
+    
+    // Remove from DOM after transition finishes to save resources
+    setTimeout(() => {
+      loader.remove();
+    }, 600); 
+  });
 </script>
 </body>
 </html>
