@@ -556,17 +556,20 @@
 });
 
 </script>
-      <script>
+<script>
 window.addEventListener("load", () => {
     const loader = document.getElementById("loadingScreen");
     
-    // Smoothly fade out
-    loader.classList.add("loading-fade-out");
-    
-    // Remove from DOM after transition finishes to save resources
+    // Page is ready, but we wait 1 extra second (1000ms) for polish
     setTimeout(() => {
-      loader.remove();
-    }, 600); 
+      loader.classList.add("loading-fade-out");
+      
+      // Completely remove from DOM after the 0.8s CSS transition finishes
+      setTimeout(() => {
+        loader.remove();
+      }, 800);
+      
+    }, 500); 
   });
 </script>
 </body>
