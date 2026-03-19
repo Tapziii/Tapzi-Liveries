@@ -2844,3 +2844,159 @@ p.price {
     margin-top: 0;
 }
 
+/* ===== LOADING SCREEN ===== */
+.loading-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden; /* Keep background shapes contained */
+}
+
+.loading-fade-out {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Background Shapes and Elements */
+
+
+.bg-shape {
+  position: absolute;
+  opacity: 0.2; /* Very faint background elements */
+  pointer-events: none;
+  z-index: 2;
+}
+
+.shape-1 {
+  top: 15%;
+  left: 10%;
+  width: 120px;
+  height: 120px;
+  border: 1px solid #ff3b3b;
+  transform: rotate(45deg);
+  animation: bg-spin 25s linear infinite;
+}
+
+.shape-2 {
+  bottom: 20%;
+  right: 12%;
+  width: 90px;
+  height: 90px;
+  background: rgba(255, 50, 50, 0.5);
+  border-radius: 50%;
+  animation: pulse 3s ease-in-out infinite;
+}
+
+.shape-3 {
+  top: 65%;
+  left: 8%;
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, rgba(255, 59, 59, 0.), rgba(200, 40, 40, 0.5));
+  transform: skewX(15deg);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes bg-spin {
+  from { transform: rotate(45deg); }
+  to { transform: rotate(405deg); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.1; transform: scale(1); }
+  50% { opacity: 0.2; transform: scale(1.05); }
+}
+
+/* Main Loading Container */
+.loading-container {
+  position: relative;
+  width: 320px;
+  height: 320px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+/* Rotation Wrapper for the loader (not the text) */
+.rotation-wrapper {
+  position: absolute;
+  inset: 0;
+  animation: slow-spin 12s linear infinite;
+}
+
+@keyframes slow-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* The Square Loader */
+.square-loader {
+  position: absolute;
+  inset: 0;
+  border: 2px solid rgba(255, 59, 59, 0.25); /* Faint background path */
+  box-sizing: border-box;
+}
+
+/* The "Loading" Trace Stroke Effect */
+.square-loader::after {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border: 2px solid #ff3b3b;
+  box-shadow: 0 0 15px rgba(255, 59, 59, 0.5);
+  animation: square-trace 2.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+/* Faster, fainter reversed trace */
+.square-loader::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border: 2px solid rgba(255, 59, 59, 0.4);
+  animation: square-trace 3.5s linear infinite reverse;
+}
+
+@keyframes square-trace {
+  0% { clip-path: inset(0 80% 98% 0); }   /* Top left */
+  25% { clip-path: inset(0 0 98% 80%); }  /* Top right */
+  50% { clip-path: inset(80% 0 0 80%); }  /* Bottom right */
+  75% { clip-path: inset(98% 80% 0 0); }  /* Bottom left */
+  100% { clip-path: inset(0 80% 98% 0); } /* Back to Top left */
+}
+
+/* Typography */
+.loading-title {
+  text-align: center;
+  pointer-events: none;
+  z-index: 15;
+}
+
+.loading-title-top {
+  display: block;
+  font-size: 54px;
+  font-weight: 900;
+  letter-spacing: 14px;
+  text-transform: uppercase;
+  margin-bottom: 2px;
+  background: linear-gradient(to bottom, #ffffff, #bbbbbb);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 0.9;
+}
+
+.loading-title-bottom {
+  display: block;
+  font-size: 15px;
+  font-weight: 400;
+  letter-spacing: 18px;
+  color: #ff3b3b;
+  text-transform: uppercase;
+  margin-left: 18px; /* Offset to center the tracking */
+  margin-top: 5px;
+}
