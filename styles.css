@@ -3101,3 +3101,42 @@ site-header, site-footer, site-loader { display: block; }
     box-sizing: border-box !important;
   }
 }
+
+/* Additional Mobile Layout Fixes for custom.html */
+@media (max-width: 768px) {
+  /* Fix Custom Livery Request huge text wrapping off screen */
+  .free-title {
+    font-size: 3rem !important;
+    line-height: 1.1 !important;
+    word-wrap: break-word !important;
+    white-space: normal !important;
+    position: relative;
+    z-index: 50;
+  }
+  
+  .free-get, .free-free {
+    font-size: inherit !important;
+    line-height: inherit !important;
+    white-space: normal !important;
+    word-break: break-word !important;
+  }
+  
+  .free-description, .free-text {
+    position: relative;
+    z-index: 50;
+  }
+
+  /* Fix Form bleeding off screen */
+  .form-chaos {
+    width: 100% !important;
+    box-sizing: border-box !important;
+    padding: 1.5rem !important;
+    overflow: hidden !important;
+  }
+  
+  .input-group, .input-group input, .input-group select, .input-group textarea {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+}
