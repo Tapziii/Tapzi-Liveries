@@ -81,10 +81,27 @@ class SiteLoader extends HTMLElement {
         </div>
       </div>
     `;
+
+    const loader = this.querySelector('#loadingScreen');
+    
+    const hideLoader = () => {
+      if (loader) {
+        loader.classList.add('loading-fade-out');
+        setTimeout(() => { this.remove(); }, 800);
+      }
+    };
+
+    if (document.readyState === 'complete' || document.readyState === 'interactive') {
+      setTimeout(hideLoader, 50);
+    } else {
+      document.addEventListener('DOMContentLoaded', () => setTimeout(hideLoader, 50));
+      window.addEventListener('load', () => setTimeout(hideLoader, 50));
+    }
   }
 }
 
 customElements.define('site-header', SiteHeader);
 customElements.define('site-footer', SiteFooter);
 customElements.define('site-loader', SiteLoader);
+
 
