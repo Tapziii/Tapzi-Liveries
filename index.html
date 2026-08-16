@@ -12,24 +12,7 @@
   </head>
 
   <body>
-  <div id="loadingScreen" class="loading-screen">
-  <div class="scan-line"></div>
-  
-  <div class="bg-shape shape-1"></div>
-  <div class="bg-shape shape-2"></div>
-  <div class="bg-shape shape-3"></div>
-
-  <div class="loading-container">
-    <div class="rotation-wrapper">
-      <div class="square-loader"></div>
-    </div>
-
-    <div class="loading-title">
-      <span class="loading-title-top">Tapzi</span>
-      <span class="loading-title-bottom">Liveries</span>
-    </div>
-  </div>
-</div>
+  <site-loader></site-loader>
     <div id="root">
       <!-- Chaotic Geometric Background -->
       <div class="geometric-background">
@@ -53,24 +36,7 @@
       </div>
 
       <!-- Broken Grid Navigation -->
-      <nav class="navigation">
-        <div class="nav-container">
-          <!-- Logo in unconventional position -->
-                <div class="logo-wrapper">
-                 <a href="./">
-                    <img src="logo.png" alt="Chaos Liveries Logo" class="logo-image">
-                 </a>
-                </div>
-          
-          <!-- Scattered navigation -->
-          <div class="nav-links">
-            <a href="./" class="nav-link active">HOME</a>
-            <a href="./hangar" class="nav-link">LIVERY HANGAR</a>
-            <a href="./paintshop" class="nav-link">PAINTSHOP</a>
-            <a href="./custom" class="nav-link">CUSTOM LIVERIES</a>
-          </div>
-        </div>
-      </nav>
+      <site-header></site-header>
 
       <!-- Asymmetric Hero Section -->
       <section class="hero-section">
@@ -88,15 +54,7 @@
           </div>
         </div>
       </section>
-<!-- Mobile Warning Modal -->
-<div id="mobileModal">
-  <div class="modalContent">
-    <h2>📱 Heads Up!</h2>
-    <p>This site isn’t fully optimized for your screen size yet. For the best experience, please visit from a PC or laptop.</p>
-    <button id="closeModal">Got it!</button>
-  </div>
-</div>
-       <!-- About Me Section -->
+<!-- About Me Section -->
         <section id= "about" class="about-section">
             <div class="about-container">
                 <div class="about-content-grid">
@@ -126,11 +84,11 @@
                     <div class="about-visual">
                         <div class="about-stats">
                             <div class="stat-item">
-                                <div class="stat-number">360+</div>
+                                <div class="stat-number">370+</div>
                                 <div class="stat-label">TOTAL LIVERIES PAINTED</div>
                             </div>
                             <div class="stat-item">
-                                <div class="stat-number">360K+</div>
+                                <div class="stat-number">362K+</div>
                                 <div class="stat-label">TOTAL DOWNLOADS</div>
                             </div>
                             <div class="stat-item">
@@ -195,55 +153,14 @@
        <button onclick="topFunction()" id="myBtn" title="Go to top">TOP</button>
       
        <!-- Deconstructed Footer -->
-      <footer class="footer">
-        <div class="footer-content">
-
-          <div class="social-links">
-            <div class="social-icons">
-                <a href="https://www.youtube.com/@Tapzi" target="_blank" class="social-icon youtube">
-                 <i class="fab fa-youtube"></i>
-                </a>
-                <a href="https://www.instagram.com/_tapzi_/" target="_blank" class="social-icon instagram">
-                  <i class="fab fa-instagram"></i>
-                </a>
-                <a href="https://paypal.me/NoamS8?locale.x=en_US&country.x=IL" target="_blank" class="social-icon donation">
-                    <i class="fa-brands fa-paypal"></i>
-                </a>
-            </div>
-
-            <p class="footer-copyright">©2025 Tapzi Liveries</p>
-
-            <div class="contact-info">
-              <div class="contact-item">Discord: tapzi</div>
-              <div class="contact-item">Email: tapziworld@gmail.com</div>
-            </div>
-          </div>
-        </div>
-      </footer>
+      <site-footer></site-footer>
     </div>
             <div id="bthn" lang="en"></div>
 
 
+    <script src="components.js"></script>
     <script src="script.js"></script>
-    <script>
-
- window.addEventListener('load', function() { 
-  const modal = document.getElementById('mobileModal');
-  const closeBtn = document.getElementById('closeModal');
-
-  if (!modal || !closeBtn) return; 
-
-
-  if (window.innerWidth <= 1024) {
-    modal.style.display = 'flex';
-  }
-
-  closeBtn.addEventListener('click', function() {
-    modal.style.display = 'none';
-  });
-});
-
-</script>
+    
 <script>
 window.addEventListener("load", () => {
     const loader = document.getElementById("loadingScreen");
@@ -262,6 +179,19 @@ window.addEventListener("load", () => {
 </script>
   </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

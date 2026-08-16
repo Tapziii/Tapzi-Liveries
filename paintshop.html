@@ -14,28 +14,34 @@
       .go-to-portfolio {
         margin-bottom: 7rem; 
         margin-top: 0rem;
-     }
+      }
+      .small-cta-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 10px 18px;
+        font-size: 0.85rem;
+        text-decoration: none;
+        color: #fca5a5;
+        background: rgba(252, 165, 165, 0.05);
+        border: 1px solid rgba(252, 165, 165, 0.3);
+        border-radius: 4px;
+        transition: all 0.3s ease;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-weight: 600;
+      }
+      .small-cta-btn:hover {
+        background: rgba(252, 165, 165, 0.15);
+        border-color: #fca5a5;
+        color: #fff;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(252, 165, 165, 0.15);
+      }
     </style>
 </head>
 <body>
-<div id="loadingScreen" class="loading-screen">
-  <div class="scan-line"></div>
-  
-  <div class="bg-shape shape-1"></div>
-  <div class="bg-shape shape-2"></div>
-  <div class="bg-shape shape-3"></div>
-
-  <div class="loading-container">
-    <div class="rotation-wrapper">
-      <div class="square-loader"></div>
-    </div>
-
-    <div class="loading-title">
-      <span class="loading-title-top">Tapzi</span>
-      <span class="loading-title-bottom">Liveries</span>
-    </div>
-  </div>
-</div>
+<site-loader></site-loader>
     <div id="root">
         <!-- Geometric Background -->
         <div class="geometric-background">
@@ -52,21 +58,7 @@
         </div>
 
         <!-- Navigation -->
-        <nav class="navigation">
-            <div class="nav-container">
-                <div class="logo-wrapper">
-                 <a href="./">
-                    <img src="logo.png" alt="Chaos Liveries Logo" class="logo-image">
-                 </a>
-                </div>
-                <div class="nav-links">
-                    <a href="./" class="nav-link">HOME</a>
-                    <a href="./hangar" class="nav-link">LIVERY HANGAR</a>
-                    <a href="./paintshop" class="nav-link active">PAINTSHOP</a>
-                    <a href="./custom" class="nav-link">CUSTOM LIVERIES</a>
-                </div>
-            </div>
-        </nav>
+        <site-header></site-header>
 
         <!-- Portfolio Header -->
         <section class="portfolio-header-section">
@@ -85,13 +77,7 @@
                 <div class="header-decoration-2"></div>
             </div>
         </section>
-<div id="mobileModal">
-  <div class="modalContent">
-    <h2>📱 Heads Up!</h2>
-    <p>This site isn’t fully optimized for your screen size yet. For the best experience, please visit from a PC or laptop.</p>
-    <button id="closeModal">Got it!</button>
-  </div>
-</div>
+
 
         <!-- Livery Status Section -->
         <section class="status-section">
@@ -127,10 +113,10 @@
                             <td>Pack</td>
                         </tr>  
                         <tr>
-                            <td>iniBuilds Airbus A330-300</td>
-                            <td>Swiss</td>
+                            <td>Asobo ATR 72-600F</td>
+                            <td>FedEx</td>
                             <td><span class="status-badge status-wip">WIP</span></td>
-                            <td>Fleet</td>
+                            <td>Pack</td>
                         </tr>  
                             <tr>
                                 <td>Fenix Airbus A320</td>
@@ -138,23 +124,18 @@
                                 <td><span class="status-badge status-planned">PLANNED</span></td>
                                 <td>Pack</td>
                             </tr>
+
                             <tr>
-                                <td>PMDG B777-200ER</td>
-                                <td> Air New Zealand</td>
-                                <td><span class="status-badge status-planned">PLANNED</span></td>
-                                <td>Fleet</td>
-                            </tr>
-                            <tr>
-                                <td>PMDG Boeing B738</td>
-                                <td>EastarJet</td>
+                                <td>Fenix Airbus A320</td>
+                                <td>Uzbekistan Airways</td>
                                 <td><span class="status-badge status-planned">PLANNED</span></td>
                                 <td></td>
                             </tr>
                             <tr>
-                                <td>PMDG Boeing B738</td>
-                                <td>Lion Air</td>
+                                <td>Fenix Airbus A320</td>
+                                <td>ITA Transportes Aereos</td>
                                 <td><span class="status-badge status-planned">PLANNED</span></td>
-                                <td>Pack</td>
+                                <td></td>
                             </tr>
                         </tbody>
                     </table>
@@ -167,8 +148,8 @@
             <div class="projects-container">
                 <div class="section-header">
                     <h2 class="section-title projects-title">
-                        <span class="title-status">UPCOMING</span>
-                        <span class="title-liveries">LIVERY PROJECTS</span>
+                        <span class="title-status">LIVERY</span>
+                        <span class="title-liveries">PROJECTS</span>
                     </h2>
                 </div>
           
@@ -197,6 +178,9 @@
                 <p>A collection of less-known/defunct airline liveries mainly (but not only) for the Fenix Airbuses. The pack will include airlines such as Aigle Azur, Strategic Airlines, BestAir, Air Europe, and many more.
                 <br><br>Stay tuned for the livery releases!
                 </p>
+                <div style="display: flex; justify-content: flex-end; margin-top: 15px;">
+                  <a href="https://flightsim.to/collection/tapzi-s-regional-airlines" class="small-cta-btn" target="_blank">View Collection <i class="fas fa-arrow-right" style="font-size: 0.75rem;"></i></a>
+                </div>
               </div>
               <div class="service-decoration">
                 <div class="service-shape service-shape-3"></div>
@@ -229,7 +213,7 @@
                         <tbody>
                         <tr>
                             <td>Fenix Airbus A320</td>
-                            <td>WOW Air</td>
+                            <td>Heston Airlines</td>
                             <td><span class="status-badge status-planned">PLANNED</span></td>
                             <td>MSFS 2024 Compatibiliy</td>
                         </tr>
@@ -244,55 +228,14 @@
 
     </div>
      <!-- Deconstructed Footer -->
-      <footer class="footer">
-        <div class="footer-content">
-          <div class="social-links">
-            <div class="social-icons">
-                <a href="https://www.youtube.com/@Tapzi" target="_blank" class="social-icon youtube">
-                 <i class="fab fa-youtube"></i>
-                </a>
-                <a href="https://www.instagram.com/_tapzi_/" target="_blank" class="social-icon instagram">
-                  <i class="fab fa-instagram"></i>
-                </a>
-                <a href="https://paypal.me/NoamS8?locale.x=en_US&country.x=IL" target="_blank" class="social-icon donation">
-                    <i class="fa-brands fa-paypal"></i>
-                </a>
-            </div>
-
-            <p class="footer-copyright">©2025 Tapzi Liveries</p>
-
-            <div class="contact-info">
-              <div class="contact-item">Discord: tapzi</div>
-              <div class="contact-item">Email: tapziworld@gmail.com</div>
-            </div>
-          </div>
-
-        </div>
-      </footer>
+      <site-footer></site-footer>
               <div id="bthn" lang="en"></div>
 
        <button onclick="topFunction()" id="myBtn" title="Go to top">TOP</button>
 
+    <script src="components.js"></script>
     <script src="script.js"></script>
-    <script>
-
- window.addEventListener('load', function() { 
-  const modal = document.getElementById('mobileModal');
-  const closeBtn = document.getElementById('closeModal');
-
-  if (!modal || !closeBtn) return; 
-
-
-  if (window.innerWidth <= 1024) {
-    modal.style.display = 'flex';
-  }
-
-  closeBtn.addEventListener('click', function() {
-    modal.style.display = 'none';
-  });
-});
-
-</script>
+    
 <script>
 window.addEventListener("load", () => {
     const loader = document.getElementById("loadingScreen");
@@ -311,6 +254,19 @@ window.addEventListener("load", () => {
 </script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

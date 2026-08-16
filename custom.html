@@ -21,24 +21,7 @@
     </style>
 </head>
 <body>
-    <div id="loadingScreen" class="loading-screen">
-  <div class="scan-line"></div>
-  
-  <div class="bg-shape shape-1"></div>
-  <div class="bg-shape shape-2"></div>
-  <div class="bg-shape shape-3"></div>
-
-  <div class="loading-container">
-    <div class="rotation-wrapper">
-      <div class="square-loader"></div>
-    </div>
-
-    <div class="loading-title">
-      <span class="loading-title-top">Tapzi</span>
-      <span class="loading-title-bottom">Liveries</span>
-    </div>
-  </div>
-</div>
+    <site-loader></site-loader>
     <div id="root">
         <!-- Geometric Background -->
         <div class="geometric-background">
@@ -55,28 +38,8 @@
         </div>
 
         <!-- Navigation -->
-        <nav class="navigation">
-            <div class="nav-container">
-                <div class="logo-wrapper">
-                 <a href="./">
-                    <img src="logo.png" alt="Chaos Liveries Logo" class="logo-image">
-                 </a>
-                </div>
-                <div class="nav-links">
-                    <a href="./" class="nav-link">HOME</a>
-                    <a href="./hangar" class="nav-link">LIVERY HANGAR</a>
-                    <a href="./paintshop" class="nav-link">PAINTSHOP</a>
-                    <a href="./custom" class="nav-link active">CUSTOM LIVERIES</a>
-                </div>
-            </div>
-        </nav>
-<div id="mobileModal">
-  <div class="modalContent">
-    <h2>📱 Heads Up!</h2>
-    <p>This site isn’t fully optimized for your screen size yet. For the best experience, please visit from a PC or laptop.</p>
-    <button id="closeModal">Got it!</button>
-  </div>
-</div>
+        <site-header></site-header>
+
         <!-- Portfolio Header -->
         <section class="portfolio-header-section">
             <div class="portfolio-header-container">
@@ -94,9 +57,9 @@
             </div>
         </section>
 
-<div class="request-status closed">
-  <h2>Status: <span>Closed</span></h2>
-  <p>Custom livery requests are closed at the moment</p>
+<div class="request-status open">
+  <h2>Status: <span>Open</span></h2>
+  <p>Custom livery requests are open! Please use the form below.</p>
 </div>
 
                     <!-- Services -->
@@ -104,7 +67,6 @@
         <div class="services-container">
           <h2 class="services-title">
             <span class="services-what">Services</span>
-
           </h2>
           
           <div class="services-list" id="services-list"> 
@@ -139,7 +101,6 @@
                 <ul>
                   <li>→ Cabin Textures - from $10</li>
                   <li>→ Custom Cabin - 3D models (for supported aircraft) - from $15</li>
-                  <li>→ Branded Ground Equipment (for supported aircraft) - from $10</li>
                 </ul>
               </div>
               <div class="service-decoration">
@@ -165,17 +126,17 @@
             </div>
             
             <div class="free-description">
-              <p class="free-text">Looking for someone to paint your custom livery for MSFS?
-                I specialize in recreating high-quality liveries with exceptional attention to detail.
-                If you'd like to request a custom livery, simply fill out the form below.</p>
-             <div class="free-benefits">
-                <div class="benefit-item">
-                  <div class="benefit-icon">✓</div>
-                  <span>All orders include free post-order bug fixes and support if needed</span>
-
-                </div>
-                <button  class="openPopupBtn" id="openPopupBtn">Aircraft List</button>
-              </div>
+              <p class="free-text">
+                Looking for someone to paint your custom livery for MSFS? I specialize in recreating high-quality liveries with exceptional attention to detail. If you'd like to request a custom livery, simply fill out the form below. <a href="javascript:void(0)" id="openPopupBtn" style="display: inline-flex; align-items: center; gap: 6px; background: rgba(252, 165, 165, 0.1); border: 1px solid rgba(252, 165, 165, 0.3); padding: 2px 10px; border-radius: 12px; color: #fca5a5; text-decoration: none; font-weight: 700; font-size: 0.9em; transition: all 0.2s; margin-left: 4px; vertical-align: middle;" onmouseover="this.style.background='rgba(252, 165, 165, 0.2)'; this.style.borderColor='#fca5a5'; this.style.color='#fff';" onmouseout="this.style.background='rgba(252, 165, 165, 0.1)'; this.style.borderColor='rgba(252, 165, 165, 0.3)'; this.style.color='#fca5a5';">View Supported Aircraft</a><br><br>
+                <span style="color: #fca5a5; font-weight: 700;"><i class="fas fa-check" style="margin-right: 5px;"></i> All orders include free post-order bug fixes and support if needed.</span>
+              </p>
+            </div>
+            
+            <div class="notam-alert" style="background: rgba(220, 38, 38, 0.15); border-left: 4px solid #dc2626; padding: 15px 20px; margin-bottom: 30px; border-radius: 4px;">
+              <h3 style="margin-top: 0; margin-bottom: 8px; color: #fca5a5; font-size: 1.1rem; display: flex; align-items: center; gap: 8px;">
+                <i class="fas fa-exclamation-triangle"></i> NOTAM
+              </h3>
+              <p style="margin: 0; color: #e5e7eb; font-size: 0.95rem;">Please note: I am no longer accepting or painting new liveries for <strong>MSFS 2020</strong>.</p>
             </div>
             
             <div class="free-form-section">
@@ -185,7 +146,6 @@
                               <label for="simulator"><span class="required"></span> Simulator: *</label><br>
           <select name="Simulator" id="simulator" required>
            <option value="" disabled selected>Choose</option>
-           <option value="MSFS 2020">MSFS 2020</option>
            <option value="MSFS 2024">MSFS 2024</option>
            <option value="X Plane">X Plane</option>
          </select><br><br>
@@ -233,16 +193,17 @@
         </div>
 <div id="popup" class="popup">
 <div class="popup-content">
-<span class="close-btn">✖</span>
-<h2>Full list of aircraft I paint</h2><br>
+<span class="close-btn">&times;</span>
+<h2>Full list of aircraft I paint</h2>
 <ul class="popup-text">
   <li>Default Aircraft (MSFS & X Plane)</li>
   <li>Fenix A319, A320, A321</li>
-  <li>PMDG B777-200ER</li>
-  <li>PMDG B737-800</li>
+  <li>PMDG B777-200ER, B777F</li>
+  <li>PMDG B737-600, -800, -900/900ER</li>
   <li>Horizon Simulations B787-8, -9, -10</li>
   <li>FlyByWire A320N, A380</li>
-  <li>iniBuilds A300, A320N, A321LR, A350-900, ULR, -1000</li>
+  <li>iniBuilds A300, A350-900, ULR, -1000</li>
+  <li>Synaptic A220-300</li>
   <li>LivToAir Eviation Alice, Cessna Citation CJ3+</li>
   <li>iFly Boeing B737 MAX 8</li>
   <li>FSS Embraer E190/195, E170/175</li>
@@ -258,55 +219,14 @@
       </section>
     </div>
      <!-- Deconstructed Footer -->
-      <footer class="footer">
-        <div class="footer-content">
-          <div class="social-links">
-            <div class="social-icons">
-                <a href="https://www.youtube.com/@Tapzi" target="_blank" class="social-icon youtube">
-                 <i class="fab fa-youtube"></i>
-                </a>
-                <a href="https://www.instagram.com/_tapzi_/" target="_blank" class="social-icon instagram">
-                  <i class="fab fa-instagram"></i>
-                </a>
-                <a href="https://paypal.me/NoamS8?locale.x=en_US&country.x=IL" target="_blank" class="social-icon donation">
-                    <i class="fa-brands fa-paypal"></i>
-                </a>
-            </div>
-
-            <p class="footer-copyright">©2025 Tapzi Liveries</p>
-
-            <div class="contact-info">
-              <div class="contact-item">Discord: tapzi</div>
-              <div class="contact-item">Email: tapziworld@gmail.com</div>
-            </div>
-          </div>
-
-        </div>
-      </footer>
+      <site-footer></site-footer>
               <div id="bthn" lang="en"></div>
 
        <button onclick="topFunction()" id="myBtn" title="Go to top">TOP</button>
 
+    <script src="components.js"></script>
     <script src="script.js"></script>
-    <script>
-
- window.addEventListener('load', function() { 
-  const modal = document.getElementById('mobileModal');
-  const closeBtn = document.getElementById('closeModal');
-
-  if (!modal || !closeBtn) return; 
-
-
-  if (window.innerWidth <= 1024) {
-    modal.style.display = 'flex';
-  }
-
-  closeBtn.addEventListener('click', function() {
-    modal.style.display = 'none';
-  });
-});
-
-</script>
+    
 <script>
 window.addEventListener("load", () => {
     const loader = document.getElementById("loadingScreen");
@@ -325,6 +245,20 @@ window.addEventListener("load", () => {
 </script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
