@@ -3140,3 +3140,12 @@ site-header, site-footer, site-loader { display: block; }
     box-sizing: border-box !important;
   }
 }
+
+/* Final override for custom.html width issues */
+@media (max-width: 768px) {
+  .free-description {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+}
